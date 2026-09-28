@@ -115,7 +115,6 @@ footer { color: var(--muted); font-size: 13px; text-align: center; padding: 24px
   .pub .a, .pub .t { overflow-wrap: anywhere; }
   nav .brand { display: none; }
   .profile { flex-direction: column; text-align: center; gap: 18px; padding-top: 28px; }
-  .profile img { width: 140px; height: 172px; }
   .socials, .interests { justify-content: center; }
   .news li, .timeline li { flex-direction: column; gap: 0; }
 }
@@ -145,22 +144,22 @@ nav .links a.active { color: var(--fg); }
           mask-image: linear-gradient(to bottom, #000 60%, transparent);
 }
 
-.avatar { position: relative; flex-shrink: 0; padding: 4px; border-radius: 16px; animation: float 6s ease-in-out infinite; }
-.avatar::before {
-  content: ""; position: absolute; inset: 0; border-radius: 16px; z-index: -1;
-  background: conic-gradient(from var(--ang), var(--accent), var(--link), #a855f7, var(--accent));
-  animation: spin 5s linear infinite; filter: blur(.5px);
+.avatar {
+  position: relative; flex-shrink: 0; width: 184px; height: 184px; border-radius: 50%;
+  padding: 3px; background: conic-gradient(from var(--ang), var(--accent), var(--link), var(--accent));
+  animation: spin 8s linear infinite;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .12);
 }
-.avatar::after {
-  content: ""; position: absolute; inset: 0; border-radius: 16px; z-index: -2;
-  box-shadow: 0 0 36px 4px color-mix(in srgb, var(--accent) 45%, transparent);
-  opacity: .7;
+.avatar img {
+  display: block; width: 100%; height: 100%; border-radius: 50%;
+  object-fit: cover; object-position: 50% 18%;
+  border: 4px solid var(--bg); box-shadow: none;
+  transition: transform .5s ease;
 }
-.avatar img { display: block; box-shadow: none; transition: transform .4s ease; }
-.avatar:hover img { transform: scale(1.03); }
+.avatar:hover img { transform: scale(1.04); }
+@media (max-width: 640px) { .avatar { width: 150px; height: 150px; } }
 @property --ang { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
 @keyframes spin { to { --ang: 360deg; } }
-@keyframes float { 50% { transform: translateY(-6px); } }
 
 .shine {
   background: linear-gradient(100deg, var(--fg) 35%, var(--accent) 50%, var(--fg) 65%);
