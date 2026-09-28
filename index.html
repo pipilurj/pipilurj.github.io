@@ -13,6 +13,8 @@
 </head>
 <body>
 
+<div id="progress"></div>
+
 <nav>
   <div class="inner">
     <a class="brand" href="#">Renjie Pi</a>
@@ -29,10 +31,12 @@
 <main>
 
 <header class="profile">
-  <img src="avatar.jpg" alt="Renjie Pi">
+  <canvas id="hero-bg" aria-hidden="true"></canvas>
+  <div class="avatar"><img src="avatar.jpg" alt="Renjie Pi"></div>
   <div>
-    <h1>Renjie Pi<span class="zh">皮仁杰</span></h1>
+    <h1><span class="shine">Renjie Pi</span><span class="zh">皮仁杰</span></h1>
     <p class="title">Research Scientist, <a href="https://www.nvidia.com/en-us/research/">NVIDIA</a></p>
+    <div class="typed-line">Working on <span id="typed" data-words='["LLM post-training","agentic coding","terminal-use agents","reinforcement learning","multimodal LLMs"]'></span><span class="caret"></span></div>
     <div class="email">rpi (at) connect (dot) ust (dot) hk</div>
     <div class="socials">
       <a href="https://scholar.google.com/citations?user=XUq0HwcAAAAJ&amp;hl=en"><svg viewBox="0 0 24 24"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>Scholar</a>
@@ -285,5 +289,6 @@
 
 <footer>© 2026 Renjie Pi · Last updated September 2026</footer>
 
+<script src="anim.js" defer></script>
 </body>
 </html>
