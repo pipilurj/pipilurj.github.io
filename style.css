@@ -135,16 +135,18 @@ nav .links a::after {
 nav .links a:hover::after, nav .links a.active::after { transform: scaleX(1); }
 nav .links a.active { color: var(--fg); }
 
-.profile { position: relative; padding-top: 64px; padding-bottom: 48px; }
-.profile h1, .profile .title, .typed-line, .profile .email { text-shadow: 0 0 12px var(--bg), 0 0 4px var(--bg); }
-.shine { text-shadow: none; }
-.profile > *:not(canvas) { position: relative; z-index: 1; }
-#hero-bg {
-  position: absolute; z-index: 0; top: -60px; left: 50%; transform: translateX(-50%);
-  width: 100vw; height: calc(100% + 150px);
-  -webkit-mask-image: linear-gradient(to bottom, #000 70%, transparent);
-          mask-image: linear-gradient(to bottom, #000 70%, transparent);
+.banner {
+  position: relative; height: 260px; overflow: hidden; cursor: crosshair;
+  background:
+    radial-gradient(ellipse at 20% 0%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 60%),
+    radial-gradient(ellipse at 85% 30%, color-mix(in srgb, var(--link) 12%, transparent), transparent 60%),
+    color-mix(in srgb, var(--chip) 55%, var(--bg));
+  border-bottom: 1px solid var(--border);
 }
+#hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+
+.profile { position: relative; z-index: 1; align-items: flex-start; padding-top: 0; margin-top: -96px; }
+.profile .info { padding-top: 110px; }
 
 .avatar {
   position: relative; flex-shrink: 0; width: 184px; height: 184px; border-radius: 50%;
@@ -155,11 +157,16 @@ nav .links a.active { color: var(--fg); }
 .avatar img {
   display: block; width: 100%; height: 100%; border-radius: 50%;
   object-fit: cover; object-position: 50% 18%;
-  border: 4px solid var(--bg); box-shadow: none;
+  border: 5px solid var(--bg); box-shadow: none; background: var(--bg);
   transition: transform .5s ease;
 }
 .avatar:hover img { transform: scale(1.04); }
-@media (max-width: 640px) { .avatar { width: 150px; height: 150px; } }
+@media (max-width: 640px) {
+  .banner { height: 190px; }
+  .avatar { width: 150px; height: 150px; }
+  .profile { align-items: center; margin-top: -80px; }
+  .profile .info { padding-top: 0; }
+}
 @property --ang { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
 @keyframes spin { to { --ang: 360deg; } }
 

@@ -68,7 +68,7 @@
     W = canvas.clientWidth; H = canvas.clientHeight;
     canvas.width = W * dpr; canvas.height = H * dpr;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    const n = Math.round(Math.min(150, W * H / 6500));
+    const n = Math.round(Math.min(150, W * H / 4200));
     pts = Array.from({ length: n }, () => ({
       x: Math.random() * W, y: Math.random() * H,
       vx: (Math.random() - .5) * .7, vy: (Math.random() - .5) * .7,
@@ -76,7 +76,7 @@
     }));
     pulses = [];
   };
-  const hero = canvas.parentElement;
+  const hero = canvas.parentElement; // .banner
   hero.addEventListener('pointermove', e => {
     const b = canvas.getBoundingClientRect();
     mouse.x = e.clientX - b.left; mouse.y = e.clientY - b.top;
