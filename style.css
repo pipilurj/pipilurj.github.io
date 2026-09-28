@@ -135,18 +135,23 @@ nav .links a::after {
 nav .links a:hover::after, nav .links a.active::after { transform: scaleX(1); }
 nav .links a.active { color: var(--fg); }
 
-.banner {
-  position: relative; height: 260px; overflow: hidden; cursor: crosshair;
-  background:
-    radial-gradient(ellipse at 20% 0%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 60%),
-    radial-gradient(ellipse at 85% 30%, color-mix(in srgb, var(--link) 12%, transparent), transparent 60%),
-    color-mix(in srgb, var(--chip) 55%, var(--bg));
-  border-bottom: 1px solid var(--border);
+/* Page-wide animated background: visible in the side gutters and fading
+   smoothly toward the centre column, which is left clear for content. */
+#hero-bg {
+  position: fixed; inset: 0; width: 100vw; height: 100vh; z-index: -1; display: block;
+  --g: calc(50% - 410px); /* gutter width */
+  --m: linear-gradient(to right,
+    #000 0, rgba(0,0,0,.9) calc(var(--g) * .3), rgba(0,0,0,.55) calc(var(--g) * .65),
+    rgba(0,0,0,.2) calc(var(--g) * .9), rgba(0,0,0,.04) calc(var(--g) + 40px),
+    rgba(0,0,0,.04) calc(100% - var(--g) - 40px), rgba(0,0,0,.2) calc(100% - var(--g) * .9),
+    rgba(0,0,0,.55) calc(100% - var(--g) * .65), rgba(0,0,0,.9) calc(100% - var(--g) * .3), #000 100%);
+  -webkit-mask-image: var(--m); mask-image: var(--m);
 }
-#hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+body { background: transparent; }
+html { background: var(--bg); }
+nav { background: color-mix(in srgb, var(--bg) 70%, transparent); }
 
-.profile { position: relative; z-index: 1; align-items: flex-start; padding-top: 0; margin-top: -96px; }
-.profile .info { padding-top: 110px; }
+.profile { position: relative; padding-top: 48px; }
 
 .avatar {
   position: relative; flex-shrink: 0; width: 184px; height: 184px; border-radius: 50%;
@@ -161,11 +166,15 @@ nav .links a.active { color: var(--fg); }
   transition: transform .5s ease;
 }
 .avatar:hover img { transform: scale(1.04); }
-@media (max-width: 640px) {
-  .banner { height: 190px; }
-  .avatar { width: 150px; height: 150px; }
-  .profile { align-items: center; margin-top: -80px; }
-  .profile .info { padding-top: 0; }
+@media (max-width: 640px) { .avatar { width: 150px; height: 150px; } }
+/* Narrow screens have no gutters: show the animation only above the profile, fading out. */
+@media (max-width: 1000px) {
+  #hero-bg {
+    position: absolute; height: 300px;
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,.9), rgba(0,0,0,.35) 45%, transparent);
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,.9), rgba(0,0,0,.35) 45%, transparent);
+  }
+  .profile { padding-top: 72px; }
 }
 @property --ang { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
 @keyframes spin { to { --ang: 360deg; } }

@@ -68,7 +68,7 @@
     W = canvas.clientWidth; H = canvas.clientHeight;
     canvas.width = W * dpr; canvas.height = H * dpr;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    const n = Math.round(Math.min(150, W * H / 4200));
+    const n = Math.round(Math.min(170, W * H / 6000));
     pts = Array.from({ length: n }, () => ({
       x: Math.random() * W, y: Math.random() * H,
       vx: (Math.random() - .5) * .7, vy: (Math.random() - .5) * .7,
@@ -76,14 +76,13 @@
     }));
     pulses = [];
   };
-  const hero = canvas.parentElement; // .banner
-  hero.addEventListener('pointermove', e => {
+  window.addEventListener('pointermove', e => {
     const b = canvas.getBoundingClientRect();
     mouse.x = e.clientX - b.left; mouse.y = e.clientY - b.top;
   });
-  hero.addEventListener('pointerleave', () => { mouse.x = mouse.y = -1e4; });
-  hero.addEventListener('click', e => {
-    if (e.target.closest('a')) return;
+  document.addEventListener('pointerleave', () => { mouse.x = mouse.y = -1e4; });
+  window.addEventListener('click', e => {
+    if (e.target.closest('a, button, summary')) return;
     const b = canvas.getBoundingClientRect();
     const x = e.clientX - b.left, y = e.clientY - b.top;
     ripples.push({ x, y, r: 0 });
