@@ -135,13 +135,15 @@ nav .links a::after {
 nav .links a:hover::after, nav .links a.active::after { transform: scaleX(1); }
 nav .links a.active { color: var(--fg); }
 
-.profile { position: relative; padding-bottom: 12px; }
+.profile { position: relative; padding-top: 64px; padding-bottom: 48px; }
+.profile h1, .profile .title, .typed-line, .profile .email { text-shadow: 0 0 12px var(--bg), 0 0 4px var(--bg); }
+.shine { text-shadow: none; }
 .profile > *:not(canvas) { position: relative; z-index: 1; }
 #hero-bg {
-  position: absolute; z-index: 0; top: -40px; left: 50%; transform: translateX(-50%);
-  width: 100vw; height: calc(100% + 80px);
-  -webkit-mask-image: linear-gradient(to bottom, #000 60%, transparent);
-          mask-image: linear-gradient(to bottom, #000 60%, transparent);
+  position: absolute; z-index: 0; top: -60px; left: 50%; transform: translateX(-50%);
+  width: 100vw; height: calc(100% + 150px);
+  -webkit-mask-image: linear-gradient(to bottom, #000 70%, transparent);
+          mask-image: linear-gradient(to bottom, #000 70%, transparent);
 }
 
 .avatar {
