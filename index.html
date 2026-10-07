@@ -9,6 +9,9 @@
   <meta property="og:description" content="Research Scientist at NVIDIA — LLM post-training, agentic coding, multimodal LLMs.">
   <meta property="og:image" content="https://pipilurj.github.io/avatar.jpg">
   <link rel="icon" href="avatar.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,13 +20,13 @@
 
 <nav>
   <div class="inner">
-    <a class="brand" href="#">Renjie Pi</a>
+    <a class="brand" href="#"><span class="c-green">renjie@nvidia</span>:<span class="c-blue">~</span>$</a>
     <div class="links">
-      <a href="#about">About</a>
-      <a href="#news">News</a>
-      <a href="#publications">Publications</a>
-      <a href="#experience">Experience</a>
-      <a href="#awards">Awards</a>
+      <a href="#about">about.md</a>
+      <a href="#news">news.log</a>
+      <a href="#publications">papers.bib</a>
+      <a href="#experience">cv.yaml</a>
+      <a href="#awards">awards.json</a>
     </div>
   </div>
 </nav>
@@ -32,24 +35,31 @@
 
 <main>
 
-<header class="profile">
-  <div class="avatar"><img src="avatar.jpg" alt="Renjie Pi"></div>
-  <div class="info">
-    <h1><span class="shine">Renjie Pi</span><span class="zh">皮仁杰</span></h1>
-    <p class="title">Research Scientist, <a href="https://www.nvidia.com/en-us/research/">NVIDIA</a></p>
-    <div class="typed-line">Working on <span id="typed" data-words='["LLM post-training","agentic coding","terminal-use agents","reinforcement learning","multimodal LLMs"]'></span><span class="caret"></span></div>
-    <div class="email">rpi (at) connect (dot) ust (dot) hk</div>
-    <div class="socials">
-      <a href="https://scholar.google.com/citations?user=XUq0HwcAAAAJ&amp;hl=en"><svg viewBox="0 0 24 24"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>Scholar</a>
-      <a href="https://github.com/pipilurj"><svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8 0 3.2.9.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"/></svg>GitHub</a>
-      <a href="https://x.com/RenjiePi"><svg viewBox="0 0 24 24"><path d="M18.9 1.2h3.7l-8 9.2L24 22.8h-7.4l-5.8-7.6-6.6 7.6H.5l8.6-9.8L0 1.2h7.6l5.2 6.9zm-1.3 19.4h2L6.5 3.2H4.3z"/></svg>Twitter</a>
-      <a href="https://www.linkedin.com/in/renjie-pi-8472b8158/"><svg viewBox="0 0 24 24"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.1 2.1 2.1 0 0 1 0 4.1zM7.1 20.5H3.6V9h3.6v11.5zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0z"/></svg>LinkedIn</a>
+<header class="term">
+  <div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-title">renjie@nvidia: ~ — zsh</span></div>
+  <div class="term-body">
+    <div class="avatar"><img src="avatar.jpg" alt="Renjie Pi"></div>
+    <div class="info">
+      <div class="ln"><span class="ps">❯</span> whoami</div>
+      <h1 class="out"><span class="shine">Renjie Pi</span> <span class="zh">皮仁杰</span></h1>
+      <div class="ln"><span class="ps">❯</span> cat role.txt</div>
+      <p class="out title">Research Scientist @ <a href="https://www.nvidia.com/en-us/research/">NVIDIA</a></p>
+      <div class="ln"><span class="ps">❯</span> echo $RESEARCH</div>
+      <div class="out typed-line"><span id="typed" data-words='["LLM post-training","agentic coding","terminal-use agents","reinforcement learning","multimodal LLMs"]'></span><span class="caret"></span></div>
+      <div class="ln"><span class="ps">❯</span> cat contact</div>
+      <div class="out email">rpi (at) connect (dot) ust (dot) hk</div>
+      <div class="socials">
+        <a href="https://scholar.google.com/citations?user=XUq0HwcAAAAJ&amp;hl=en"><svg viewBox="0 0 24 24"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>Scholar</a>
+        <a href="https://github.com/pipilurj"><svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8 0 3.2.9.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"/></svg>GitHub</a>
+        <a href="https://x.com/RenjiePi"><svg viewBox="0 0 24 24"><path d="M18.9 1.2h3.7l-8 9.2L24 22.8h-7.4l-5.8-7.6-6.6 7.6H.5l8.6-9.8L0 1.2h7.6l5.2 6.9zm-1.3 19.4h2L6.5 3.2H4.3z"/></svg>Twitter</a>
+        <a href="https://www.linkedin.com/in/renjie-pi-8472b8158/"><svg viewBox="0 0 24 24"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.1 2.1 2.1 0 0 1 0 4.1zM7.1 20.5H3.6V9h3.6v11.5zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0z"/></svg>LinkedIn</a>
+      </div>
     </div>
   </div>
 </header>
 
 <section id="about">
-  <h2>About Me</h2>
+  <h2><span class="ps">❯</span> cat <span class="file">about.md</span><span class="cmt"># About Me</span></h2>
   <p>
     I am a Research Scientist at <a href="https://www.nvidia.com/en-us/research/">NVIDIA</a>, working on
     <b>LLM post-training</b> with a focus on <b>agentic coding</b> and <b>terminal-use agents</b>, and I contribute to the
@@ -77,7 +87,7 @@
 </section>
 
 <section id="news">
-  <h2>News</h2>
+  <h2><span class="ps">❯</span> cat <span class="file">news.log</span><span class="cmt"># News</span></h2>
   <ul class="news">
     <li><span class="date">2026.09</span><span><a href="https://arxiv.org/abs/2602.21193">Terminal data engineering</a> accepted to NeurIPS 2026 Datasets and Benchmarks Track.</span></li>
     <li><span class="date">2026.06</span><span>Released <a href="https://arxiv.org/abs/2606.15007">Nemotron 3 Ultra</a>, an open hybrid Mamba-Transformer MoE model for agentic reasoning.</span></li>
@@ -92,7 +102,7 @@
 </section>
 
 <section id="publications">
-  <h2>Selected Publications</h2>
+  <h2><span class="ps">❯</span> cat <span class="file">papers.bib</span><span class="cmt"># Selected Publications</span></h2>
   <p class="pub-note">* equal contribution. Highlighted entries are (co-)first-authored. Full list on <a href="https://scholar.google.com/citations?user=XUq0HwcAAAAJ&amp;hl=en">Google Scholar</a>.</p>
 
   <div class="year">2026</div>
@@ -260,7 +270,7 @@
 </section>
 
 <section id="experience">
-  <h2>Education &amp; Experience</h2>
+  <h2><span class="ps">❯</span> cat <span class="file">cv.yaml</span><span class="cmt"># Education &amp; Experience</span></h2>
   <ul class="timeline">
     <li><span class="when">Present</span><span class="what"><b>NVIDIA</b> — Research Scientist</span></li>
     <li><span class="when">2021 – 2025</span><span class="what"><b>Hong Kong University of Science and Technology</b> — Ph.D. in Computer Science and Engineering</span></li>
@@ -271,7 +281,7 @@
 </section>
 
 <section id="awards">
-  <h2>Awards &amp; Honors</h2>
+  <h2><span class="ps">❯</span> cat <span class="file">awards.json</span><span class="cmt"># Awards &amp; Honors</span></h2>
   <ul class="plain">
     <li>Apple Scholarship in AI/ML, 2024</li>
     <li>Postgraduate Studentship, HKUST</li>
@@ -289,7 +299,7 @@
 
 </main>
 
-<footer>© 2026 Renjie Pi · Last updated September 2026</footer>
+<footer><span class="cmt">// © 2026 Renjie Pi · last commit: Oct 2026 · exit 0</span></footer>
 
 <script src="anim.js" defer></script>
 </body>
